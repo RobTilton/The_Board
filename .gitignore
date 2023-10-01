@@ -1,0 +1,20 @@
+# Django development-specific files
+/_virtual/
+/__pycache__/
+*.pyc
+*.pyo
+*.db.sqlite3
+
+# Local development settings
+/local_settings.py
+
+# Media and static files 
+/media/
+/static/
+
+# Environment-specific configuration files
+.env
+
+# IDE-specific files 
+.idea/
+.vscode/
