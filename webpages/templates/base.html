@@ -8,7 +8,8 @@
        
 </head>
 <body>
-    <a href="{% url 'logout' %}">Logout</a> <!--Need to make this a button, a ui bar with login, home, logout, board-->
+    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'register' %}">Register</a> <!--Need to make this a button, a ui bar with login, home, logout, board-->
     <header>
         
         <h1>{% block header %}Header Content{% endblock %}</h1>
