@@ -27,5 +27,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', views.Register, name='register'),
-    
+    path('boards/', views.Boards, name= 'boards'),
+    path('messages/', views.Messages, name= 'messages'),
+    path('board_members/', views.BoardMember, name= 'board_members'),
 ]

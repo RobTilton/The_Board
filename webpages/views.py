@@ -19,3 +19,13 @@ def Register(request):
     else:
         form = UserCreationForm()
     return render(request, 'registration/register.html', {'form': form})
+
+
+def Boards(request):
+    return render(request, 'boards.html')
+
+def Messages(request):
+    return render(request, 'messages.html')
+
+def BoardMember(request):
+    return render(request, 'board_members.html')
