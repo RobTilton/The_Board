@@ -1,13 +1,17 @@
-{% extends 'base.html' %}
+<!Doctype html>
+<html>
+    <head>
+        <title>Register</title> 
 
-{% block title %} Login {% endblock %}
+        <center><strong><h1> New User Account Creation Form </h1></strong></center>
+    </head>
+    <body>
 
-{% block header %} New User Account Creation Form {% endblock %}
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register</button>
+        </form>
 
-{% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Register</button>
-    </form>
-{% endblock %}
+    </body>
+</html>
