@@ -5,10 +5,45 @@
 {% block header %} <center>Homepage</center> {% endblock %}
 
 {% block content %}
-<center><div>
-    <center><strong>Welcome {{ user.username }}! Remember to stay hydrated.</strong><center><br/>
-    This will have the ability to write you message.<br/><br/>
-    this will have the ability to go to your assigned board.<br/><br/>
-    this will have the ability to message those in you board.<br/>
-</div></center>
+<style> 
+    .board-window   {
+        width: 70%;
+        height: 70vh;
+        float: left;
+        margin-left: 30px;
+        border: 5px solid #ccc;
+        padding: 10px;
+    }
+    .users-window {
+        width: 23%;
+        height: 70vh;
+        float: right;
+        margin-right: 30px;
+        border: 5px solid #ccc;
+        padding: 10px;
+    }
+</style>
+<center>
+    <div>
+        <strong>Welcome {{ user.username }}! Remember to stay hydrated.</strong><br/>
+
+            <div class='board-window'>
+                <form method='POST' action='{% url 'post_message' %}'>
+                    {% csrf_token %}
+                    <textarea name='message' rows='4' cols='50' placeholder='Update the Team...'></textarea><br/>
+                    <input type='submit' value='Update'>
+                </form>
+
+                <ul>
+                    {% for message in messages %}
+                    <li> {{ message.content }} </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class='users-window'>
+                <!-- list the users of board-->
+            </div>
+    
+    </div>
+</center>
 {% endblock %}

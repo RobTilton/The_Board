@@ -30,4 +30,5 @@ urlpatterns = [
     path('boards/', views.Boards, name= 'boards'),
     path('messages/', views.Messages, name= 'messages'),
     path('board_members/', views.BoardMember, name= 'board_members'),
+    path('post_message/', views.Post_Message, name='post_message'),
 ]
