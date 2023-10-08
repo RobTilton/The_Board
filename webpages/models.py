@@ -20,11 +20,11 @@ class UserProfile(models.Model):
     board = models.ForeignKey(Board, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"{self.user} of Board: '{self.board}'."
+        return f"{self.user.username} of Board: '{self.board}'."
 
 class Message(models.Model):
-    board = models.ForeignKey(Board, on_delete=models.DO_NOTHING)
-    author = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    board = models.ForeignKey(Board, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField(max_length=500)
     timestamp = models.DateTimeField(auto_now_add=True)
 

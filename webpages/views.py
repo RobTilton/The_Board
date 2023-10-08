@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.db.models import OuterRef, Subquery, Max
 from django.contrib.auth.forms import UserCreationForm
 from . import models
 
@@ -10,8 +11,12 @@ def Home(request):
     if request.user.is_authenticated:
         try:
             user_profile = models.UserProfile.objects.get(user=request.user)
-            messages = models.Message.objects.filter(board=user_profile.board)
-            return render(request, 'home.html', {'messages': messages})
+            
+            board_users = models.UserProfile.objects.filter(board=user_profile.board)
+
+            user_messages = models.Message.objects.filter(board=user_profile.board)
+
+            return render(request, 'home.html', {'board_users': board_users, 'user_messages': user_messages})
         except models.UserProfile.DoesNotExist:
             return redirect('login')
     else:
