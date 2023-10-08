@@ -45,12 +45,17 @@ def Post_Message(request):
     if request.method == 'POST':
         message_content = request.POST['message']
         if message_content:
-            models.Message.objects.create(
-                board=request.user.boardmember.board,
-                author=request.user,
-                content=message_content
-            )
-    return redirect('home')
+            try:
+                user_profile = models.UserProfile.objects.get(user=request.user)
+                board = user_profile.board
+                models.Message.objects.create(
+                    board = board,
+                    author = request.user,
+                    content = message_content
+                )
+            except models.UserProfile.DoesNotExist:
+                pass # find out how to handle this. Not sure it can happen, but you never know.
+    return redirect('home.html')
 
 
 def BoardMember(request):
