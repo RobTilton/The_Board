@@ -13,12 +13,57 @@
         margin-left: 30px;
         border: 5px solid #ccc;
         padding: 10px;
+        overflow: auto; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
     }
+    .board-window::-webkit-scrollbar{
+        width: 0;
+        display: none;
+    }
+
+    .board-section {
+        width: 28%;
+        height: 25vh;
+        float: left;
+        margin-left: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border: 5px solid #ccc;
+        padding: 10px;
+        overflow: auto; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
+    }
+    .board-section::-webkit-scrollbar{
+        width: 0;
+        display: none;
+    }
+
     .users-window {
         width: 23%;
         height: 70vh;
         float: right;
         margin-right: 30px;
+        border: 5px solid #ccc;
+        padding: 10px;
+        overflow: auto; 
+        scrollbar-width: none; 
+        -ms-overflow-style: none; 
+    }
+
+    .users-window::-webkit-scrollbar{
+        width: 0;
+        display: none;
+    }
+    
+    .window-section {
+        width: 80%;
+        height: 10vh;
+        float: left;
+        margin-left: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         border: 5px solid #ccc;
         padding: 10px;
     }
@@ -33,14 +78,24 @@
                     <textarea name='message' rows='4' cols='50' placeholder='Update the Team...'></textarea><br/>
                     <input type='submit' value='Update'>
                 </form>
+                    <div class='board-section'>
+                        <center> test1 </center>
+                    </div>
 
-                <ul>
-                    {% for message in messages %}
-                    <li> {{ message.content }} </li>
-                    {% endfor %}
-                </ul>
+           
+                   
+                </ul>                        
             </div>
             <div class='users-window'>
+                <div class='window-section'>
+                    <center> test3 </center>
+                </div>
+
+                <div class='window-section'>
+                    <center> test3 </center>
+                </div>
+
+                
                 <!-- list the users of board-->
             </div>
     

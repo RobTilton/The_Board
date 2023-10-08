@@ -5,5 +5,4 @@ class WebpagesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'webpages'
 
-    def ready(self):
-        import webpages.signals
+    

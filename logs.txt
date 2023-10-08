@@ -17,3 +17,12 @@ added:
 to views.py, was needed to complete multiple things, and will be needed later.
 
 Updated models to allow better admin site functionality, gave them names.
+--------------
+TODO: add extra profiles for tests
+    : add profiles to Waiting board
+    : allow profile to add a message to board
+    : have a way to read older messages from single user.
+
+Messages work. needs more work.
+
+
