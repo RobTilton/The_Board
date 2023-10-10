@@ -19,6 +19,3 @@ db.sqlite3
 # IDE-specific files 
 .idea/
 .vscode/
-
-# Personal
-logs.txt
