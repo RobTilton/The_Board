@@ -72,12 +72,7 @@
     <div>
         <strong>Welcome {{ user.username }}! Remember to stay hydrated.</strong><br/>
 
-            <div class='board-window'>
-                <form method='POST' action='{% url 'post_message' %}'>
-                    {% csrf_token %}
-                    <textarea name='message' rows='4' cols='50' placeholder='Update the Team...'></textarea><br/>
-                    <input type='submit' value='Update'>
-                </form>
+            <div class='board-window'>                
                     {% for user_profile in board_users %}
                         <div class='board-section'>
                             <center> {{ user_profile.user }} </center>
@@ -105,7 +100,13 @@
                 </ul>    
                 <!-- list the users of board-->
             </div>
-    
+            <div>
+                <form method='POST' action='{% url 'post_message' %}'>
+                    {% csrf_token %}
+                    <textarea name='message' rows='4' cols='50' placeholder='Update the Team...'></textarea><br/>
+                    <input type='submit' value='Update'>
+                </form>
+            </div>   
     </div>
 </center>
 {% endblock %}
